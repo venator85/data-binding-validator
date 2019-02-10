@@ -16,16 +16,16 @@
 
 package br.com.ilhasoft.support.validation.util;
 
-import androidx.databinding.adapters.ListenerUtil;
-import androidx.annotation.Nullable;
-import com.google.android.material.textfield.TextInputLayout;
 import android.text.Editable;
-import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.View;
 import android.view.ViewParent;
 import android.widget.TextView;
 
+import com.google.android.material.textfield.TextInputLayout;
+
+import androidx.annotation.Nullable;
+import androidx.databinding.adapters.ListenerUtil;
 import br.com.ilhasoft.support.validation.R;
 
 /**
@@ -40,7 +40,7 @@ public class EditTextHandler {
     public static void setError(TextView textView, String errorMessage) {
         TextInputLayout textInputLayout = getTextInputLayout(textView);
         if (textInputLayout != null) {
-            textInputLayout.setErrorEnabled(!TextUtils.isEmpty(errorMessage));
+            textInputLayout.setErrorEnabled(true);
             textInputLayout.setError(errorMessage);
         } else {
             textView.setError(errorMessage);
